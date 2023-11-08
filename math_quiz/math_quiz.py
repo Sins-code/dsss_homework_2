@@ -73,7 +73,10 @@ def math_quiz():
         print(f"\nQuestion: {problem}")
         # collect user answer
         useranswer = input("Your answer: ")
-        useranswer = int(useranswer)
+        try:
+            useranswer = int(useranswer)
+        except ValueError:
+            useranswer = None
 
         # compare answers
         if useranswer == correct_answer:
